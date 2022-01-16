@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Property;
+use App\Models\Room;
+use App\Models\User;
 use App\Service\Currencies\JPYConvert;
 use App\Service\Currencies\TWDConvert;
 use App\Service\Currencies\USDConvert;
@@ -30,6 +33,10 @@ class Currencies extends Controller
 
     public function action(Request $request)
     {
+
+        User::all()->random()->id;
+
+       return  Room::where('property_id',5)->get()->random()->id;
         $source = $request->source;
         $amount = $request->amount;
         $target = $request->target;
