@@ -11,7 +11,7 @@
 version 
 - laravel 8.79.0
 - php 8.1.1
-- mysql 5.7
+- mysql 8.0
  
 
 
