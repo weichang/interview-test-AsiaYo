@@ -30,3 +30,5 @@ version
 
 ###  API 實作測驗 => Swagger API ( API 設計文件)
 - http://127.0.0.1:8085/api/documentation
+![](api.png)
+
