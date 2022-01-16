@@ -33,10 +33,6 @@ class Currencies extends Controller
 
     public function action(Request $request)
     {
-
-        User::all()->random()->id;
-
-       return  Room::where('property_id',5)->get()->random()->id;
         $source = $request->source;
         $amount = $request->amount;
         $target = $request->target;
