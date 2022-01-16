@@ -10,7 +10,23 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Currencies extends Controller
 {
-
+    /**
+     * @OA\Post(
+     *     tags={"匯率轉換"},
+     *     path="/api/currencies",
+     *     description="匯率轉換API",
+     *     @OA\RequestBody(
+     *      required=true,
+     *       @OA\JsonContent(
+     *        type="object",
+     *          @OA\Property(property="source", type="string" ,example="" ,description="來源幣別 (TWD/JPY/USD)"),
+     *          @OA\Property(property="target", type="string" ,example="" ,description="目標幣別 (TWD/JPY/USD) "),
+     *          @OA\Property(property="amount", type="integer" ,example="" ,description="金額數字")
+     *      ),
+     *    ),
+     *     @OA\Response(response="default", description="")
+     * )
+     */
 
     public function action(Request $request)
     {

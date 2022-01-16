@@ -1,0 +1,60 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API 文件",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/currencies": {
+            "post": {
+                "tags": [
+                    "匯率轉換"
+                ],
+                "description": "匯率轉換API",
+                "operationId": "322d4cdf1887995caaf7f3810d0a2b7a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "source": {
+                                        "description": "來源幣別 (TWD/JPY/USD)",
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "target": {
+                                        "description": "目標幣別 (TWD/JPY/USD) ",
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "amount": {
+                                        "description": "金額數字",
+                                        "type": "integer",
+                                        "example": ""
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "匯率轉換",
+            "description": ""
+        }
+    ],
+    "security": [
+        []
+    ]
+}
