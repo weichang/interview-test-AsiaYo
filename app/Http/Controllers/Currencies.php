@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CurrenciesRequest;
+use App\Rules\isValidCurrencies;
 use App\Service\Currencies\Convert;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
@@ -30,10 +32,11 @@ class Currencies extends Controller
 
     public function action(Request $request)
     {
+
         $rules = [
-            "source" => "required|string",
-            "target" => "required|string",
-            "amount" => "required|integer",
+            "source" => ['required', 'string', new isValidCurrencies()],
+            "target" => ['required', 'string', new isValidCurrencies()],
+            "amount" => ['required', 'integer'],
         ];
         $validator = Validator::make($request->route()->parameters(), $rules);
 
@@ -50,10 +53,10 @@ class Currencies extends Controller
         try {
 
             $convert = new Convert($currenciesData, $source, $amount, $target);
-            $convertAmount =  $convert->convert();
+            $convertAmount = $convert->convert();
             return response()->json(['convertAmount' => $convertAmount]);
         } catch (\Exception $e) {
-            return response()->json(['status' => false,'msg' => $e->getMessage()], 400);
+            return response()->json(['status' => false, 'msg' => $e->getMessage()], 400);
         }
 
     }
