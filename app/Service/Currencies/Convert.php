@@ -9,7 +9,7 @@
 namespace App\Service\Currencies;
 
 
-class USDConvert extends Currencies
+class Convert extends Currencies
 {
     public function convert()
     {

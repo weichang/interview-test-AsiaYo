@@ -18,4 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('currencies',[\App\Http\Controllers\Currencies::class,'action']);
+Route::get('currencies/{source}/{amount}/{target}',[\App\Http\Controllers\Currencies::class,'action']);
