@@ -36,6 +36,7 @@ class Currencies extends Controller
             "amount" => "required|integer",
         ];
         $validator = Validator::make($request->route()->parameters(), $rules);
+
         if ($validator->fails()) {
             $error = $validator->errors()->first();
             return response()->json(['status' => false, 'error' => $error], 400);
