@@ -12,3 +12,12 @@ version
 - laravel 8
 - php 8
 - mysql  
+
+
+### API
+Host: 127.0.0.1:8085
+
+Run `docker-compose exec app php artisan route:list`
+
+127.0.0.1:8085/api/posts
+127.0.0.1:8085/api/comments
